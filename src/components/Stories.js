@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { getStoryIds } from '../services/hnApi';
+import { getStoryIds } from '../utils/hackerNewsAPI';
 import { Story } from '../components/Story';
-import {
-  GlobalStyle,
-  StoriesContainerWrapper,
-} from '../styles/StoriesContainerStyles';
+import { GlobalStyle, StoriesWrapper } from '../styles/StoriesStyles';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 
-export const StoriesContainer = () => {
+export const Stories = () => {
   const [storyIds, setStoryIds] = useState([]);
   const { count } = useInfiniteScroll();
 
@@ -18,12 +15,12 @@ export const StoriesContainer = () => {
   return (
     <>
       <GlobalStyle />
-      <StoriesContainerWrapper data-test-id="stories=container">
+      <StoriesWrapper data-test-id="stories=container">
         <h1>Hacker News Stories</h1>
         {storyIds.slice(0, count).map((storyId) => (
           <Story key={storyId} storyId={storyId} />
         ))}
-      </StoriesContainerWrapper>
+      </StoriesWrapper>
     </>
   );
 };

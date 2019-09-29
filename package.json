@@ -39,7 +39,6 @@
       "!src/index.js",
       "!src/serviceWorker.js",
       "!src/hooks/*.js",
-      "!src/mappers/*.js",
       "!src/utils/*.js"
     ],
     "coverageThreshold": {

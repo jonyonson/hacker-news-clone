@@ -4,8 +4,8 @@ import {
   getStory,
   newStoriesUrl,
   storyUrl,
-} from '../services/hnApi';
-import { singularStory, storyIds, emptySingularStory } from '../fixtures';
+} from '../utils/hackerNewsAPI';
+import { singularStory, storyIds, emptySingularStory } from '../utils/fixtures';
 
 jest.mock('axios');
 

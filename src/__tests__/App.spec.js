@@ -1,16 +1,16 @@
 import React from 'react';
 import { App } from '../App';
 import { render, cleanup, waitForElement } from '@testing-library/react';
-import { storyIds, singularStory } from '../fixtures';
-import { getStory, getStoryIds } from '../services/hnApi';
+import { storyIds, singularStory } from '../utils/fixtures';
+import { getStory, getStoryIds } from '../utils/hackerNewsAPI';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
-import { STORY_INCREMENT } from '../constants';
+import { STORY_INCREMENT } from '../utils/constants';
 
 beforeEach(cleanup);
 
 jest.mock('../hooks/useInfiniteScroll.js');
 
-jest.mock('../services/hnApi', () => ({
+jest.mock('../utils/hackerNewsAPI', () => ({
   getStory: jest.fn(),
   getStoryIds: jest.fn(),
 }));

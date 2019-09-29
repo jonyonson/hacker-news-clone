@@ -1,15 +1,15 @@
 import React from 'react';
 import { Story } from '../components/Story';
 import { render, cleanup, waitForElement } from '@testing-library/react';
-import { singularStory } from '../fixtures';
-import { getStory } from '../services/hnApi';
+import { singularStory } from '../utils/fixtures';
+import { getStory } from '../utils/hackerNewsAPI';
 
 beforeEach(() => {
   cleanup();
   jest.resetAllMocks();
 });
 
-jest.mock('../services/hnApi', () => ({
+jest.mock('../utils/hackerNewsAPI', () => ({
   getStory: jest.fn(),
 }));
 

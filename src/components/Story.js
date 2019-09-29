@@ -1,12 +1,12 @@
 import React, { useState, useEffect, memo } from 'react';
-import { getStory } from '../services/hnApi';
+import { getStory } from '../utils/hackerNewsAPI';
 import {
   StoryWrapper,
   StoryTitle,
   StoryMeta,
   StoryMetaElement,
 } from '../styles/StoryStyles';
-import { mapTime } from '../mappers/mapTime';
+import { mapTime } from '../utils/mapTime';
 
 export const Story = memo(function Story({ storyId }) {
   const [story, setStory] = useState({});
